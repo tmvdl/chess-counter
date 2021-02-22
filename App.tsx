@@ -7,33 +7,22 @@ type State = { view, seconds }
 export default class App extends Component<{}, State> {
   constructor(props) {
     super(props)
-
-    this.state = {
-      view: 'menu',
-      seconds: 0,
-    }
+    this.state = { view: 'menu', seconds: 0, }
   }
 
-  renderMenu() {
-    return <Menu onclick={({ seconds }) => this.setState({ view: 'counter', seconds })} />
-  }
+  renderMenu = () => <Menu onclick={({ seconds }) => this.setState({ view: 'counter', seconds })} />
 
-  renderCounter(seconds) {
-    return <Counter seconds={seconds} onback={() => this.setState({ view: 'menu' })} />
-  }
+  renderCounter = (seconds) => <Counter seconds={seconds} />
 
   renderViews = () => {
     const { view, seconds } = this.state
 
-    switch(view) {
-      case 'menu': return this.renderMenu(); break;
-      case 'counter': return this.renderCounter(seconds); break;
+    switch (view) {
+      case 'menu': return this.renderMenu();
+      case 'counter': return this.renderCounter(seconds);
+      default: return <></>
     }
-
-    return <></>
   }
 
-  render() {
-    return <View>{this.renderViews()}</View>
-  }
+  render() { return <View>{this.renderViews()}</View> }
 }
