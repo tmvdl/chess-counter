@@ -5,13 +5,13 @@ export const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingVertical: 140,
+    paddingVertical: 150,
   },
   invertedText: {
     fontSize: 50,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingVertical: 140,
+    paddingVertical: 150,
     transform: [{ rotate: "180deg" }],
   },
   lost: {
